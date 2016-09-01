@@ -1302,11 +1302,12 @@ Auth0.prototype.loginWithUsernamePassword = function (options, callback) {
     popup = this._buildPopupWindow(options);
   }
 
+  // NOTE: COMMENETED OUT BY CRIMSON - this causes all SSO login to use popup. Doesn't make sure.'
   // When a callback with more than one argument is specified and sso: true then
   // we open a popup and do authentication there.
-  if (callback && callback.length > 1 && options.sso ) {
-    return this.loginWithUsernamePasswordAndSSO(options, callback);
-  }
+  // if (callback && callback.length > 1 && options.sso ) {
+  //   return this.loginWithUsernamePasswordAndSSO(options, callback);
+  // }
 
   var query = xtend(
     this._getMode(options),
